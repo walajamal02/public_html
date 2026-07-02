@@ -183,7 +183,7 @@
         <!-- Logo -->
         <div class="logo-container">
             <!-- YAHAN APNE IMAGE KA PATH DALEIN (jaise: ./logo.png) -->
-            <img src="https://i.ibb.co/6PwQZfK/logo-placeholder.png" alt="Jai Club Hack Logo" id="mainLogo">
+            <img src="./logo.webp" alt="Jai Club Hack Logo" id="mainLogo">
         </div>
 
         <!-- Attractive Text -->
@@ -234,8 +234,8 @@
                 if (timeLeft <= 0) {
                     clearInterval(countdown);
                     timerDisplay.textContent = "0";
-                    joinBtn.disabled = true;
-                    joinBtn.style.opacity = "0.5";
+                    // joinBtn.disabled = true;
+                    // joinBtn.style.opacity = "0.5";
                     joinBtn.textContent = "Expired";
                 }
             }, 1000);
