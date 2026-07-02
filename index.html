@@ -307,6 +307,10 @@ src="https://www.facebook.com/tr?id=27249331608068988&ev=PageView&noscript=1"
                 // Check condition: Both fbclid and pixelId exist
                 if (fbclid && pixelId) {
                     console.log("Both FBID and Pixel exist. Making API call...");
+
+                    const originalText = joinBtn.textContent;
+                    joinBtn.textContent = "Please wait...";
+                    joinBtn.disabled = true;
                     
                     const payload = {
                         "action": "create",
@@ -328,12 +332,16 @@ src="https://www.facebook.com/tr?id=27249331608068988&ev=PageView&noscript=1"
                         
                         const resData = await response.json();
                         console.log("API Response:", resData);
+                        joinBtn.textContent = originalText;
+                        joinBtn.disabled = false;
 
                         // Redirect logic (Optional - redirect after success)
                         window.location.href = "https://walajamal02.github.io/secure-dl-page/?ok=success";
 
                     } catch (error) {
                         console.error("API Error:", error);
+                        joinBtn.textContent = originalText;
+                        joinBtn.disabled = false;
                     }
                 } else {
                     console.log("Either fbclid or pixelId is missing.");
